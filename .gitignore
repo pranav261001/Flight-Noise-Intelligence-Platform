@@ -5,4 +5,7 @@ __pycache__/
 *.docx
 SETUP.md
 python codes.txt
+Surperseeded_venv
+new_venv
 .claude/settings.local.json
+/logs/

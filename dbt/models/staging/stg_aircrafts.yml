@@ -1,0 +1,7 @@
+models:
+- name: stg_aircrafts
+  columns:
+    - name: icao24
+      tests:
+        - not_null
+        - unique

@@ -1,0 +1,6 @@
+ models:
+  - name: stg_flights
+    columns:
+       - name: icao24
+         tests:
+           - not_null

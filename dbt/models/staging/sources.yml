@@ -1,0 +1,6 @@
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: flight_state_vectors
+      - name: aircraft_reference
