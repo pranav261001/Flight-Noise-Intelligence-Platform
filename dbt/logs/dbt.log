@@ -2174,3 +2174,562 @@ drop view if exists "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_ba
 [0m22:55:28.279291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242E9884B60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242E95AEC60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000242E95AF500>]}
 [0m22:55:28.280290 [debug] [MainThread]: Flushing usage events
 [0m22:55:29.484066 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:10:41.829518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC15F738F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC128ED7F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC154B45C0>]}
+
+
+============================== 14:10:41.839420 | fffe0f4c-1aee-4371-b83e-06dbed6a870b ==============================
+[0m14:10:41.839420 [info ] [MainThread]: Running with dbt=1.10.20
+[0m14:10:41.840422 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\pranav\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select int_flight_events', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\pranav\\Documents\\Flight Noise Intelligence Platform\\dbt\\logs'}
+[0m14:10:42.424649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC179A9910>]}
+[0m14:10:42.536872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC17A0ECF0>]}
+[0m14:10:42.538877 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m14:10:43.176217 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m14:10:44.811008 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:10:44.812013 [debug] [MainThread]: Partial parsing: updated file: dublin_noise://models\intermediate\int_flight_events.sql
+[0m14:10:45.203661 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dublin_noise.marts
+[0m14:10:45.229710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC17F14B00>]}
+[0m14:10:45.338944 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\manifest.json
+[0m14:10:45.373333 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\semantic_manifest.json
+[0m14:10:45.467238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC18039A00>]}
+[0m14:10:45.469235 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 447 macros
+[0m14:10:45.470236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC18029580>]}
+[0m14:10:45.473230 [info ] [MainThread]: 
+[0m14:10:45.474233 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:10:45.475235 [info ] [MainThread]: 
+[0m14:10:45.476756 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:10:45.479775 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise'
+[0m14:10:49.669520 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise"
+[0m14:10:49.670519 [debug] [ThreadPool]: On list_dublin_noise: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:10:49.670519 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:10:49.779537 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.108 seconds
+[0m14:10:49.781539 [debug] [ThreadPool]: On list_dublin_noise: Close
+[0m14:10:49.789888 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise_dbt_staging'
+[0m14:10:49.798394 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_staging"
+[0m14:10:49.799394 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise_dbt_intermediate'
+[0m14:10:49.800394 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: BEGIN
+[0m14:10:49.803394 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_intermediate"
+[0m14:10:49.805400 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: BEGIN
+[0m14:10:49.806928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:10:49.804537 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:10:49.940832 [debug] [ThreadPool]: SQL status: BEGIN in 0.136 seconds
+[0m14:10:49.940832 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_staging"
+[0m14:10:49.942347 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise_dbt_staging"} */
+select
+      'dublin_noise' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_staging'
+    union all
+    select
+      'dublin_noise' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_staging'
+    union all
+    select
+      'dublin_noise' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dbt_staging'
+  
+[0m14:10:49.943362 [debug] [ThreadPool]: SQL status: BEGIN in 0.137 seconds
+[0m14:10:49.944354 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_intermediate"
+[0m14:10:49.944354 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise_dbt_intermediate"} */
+select
+      'dublin_noise' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_intermediate'
+    union all
+    select
+      'dublin_noise' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_intermediate'
+    union all
+    select
+      'dublin_noise' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dbt_intermediate'
+  
+[0m14:10:49.961455 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.017 seconds
+[0m14:10:49.962734 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.019 seconds
+[0m14:10:49.965742 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: ROLLBACK
+[0m14:10:49.967742 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: ROLLBACK
+[0m14:10:49.968742 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: Close
+[0m14:10:49.968742 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: Close
+[0m14:10:49.979282 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:49.980283 [debug] [MainThread]: On master: BEGIN
+[0m14:10:49.980283 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:10:50.033141 [debug] [MainThread]: SQL status: BEGIN in 0.053 seconds
+[0m14:10:50.034141 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:50.034141 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:10:50.051771 [debug] [MainThread]: SQL status: SELECT 4 in 0.017 seconds
+[0m14:10:50.055779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC1840AAE0>]}
+[0m14:10:50.056778 [debug] [MainThread]: On master: ROLLBACK
+[0m14:10:50.057285 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:50.058291 [debug] [MainThread]: On master: BEGIN
+[0m14:10:50.059288 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m14:10:50.059288 [debug] [MainThread]: On master: COMMIT
+[0m14:10:50.060294 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:50.060294 [debug] [MainThread]: On master: COMMIT
+[0m14:10:50.061287 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m14:10:50.061287 [debug] [MainThread]: On master: Close
+[0m14:10:50.070657 [debug] [Thread-1 (]: Began running node model.dublin_noise.int_flight_events
+[0m14:10:50.071656 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_intermediate.int_flight_events ................. [RUN]
+[0m14:10:50.072654 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dublin_noise.int_flight_events'
+[0m14:10:50.073666 [debug] [Thread-1 (]: Began compiling node model.dublin_noise.int_flight_events
+[0m14:10:50.084179 [debug] [Thread-1 (]: Writing injected SQL for node "model.dublin_noise.int_flight_events"
+[0m14:10:50.085182 [debug] [Thread-1 (]: Began executing node model.dublin_noise.int_flight_events
+[0m14:10:50.141328 [debug] [Thread-1 (]: Writing runtime sql for node "model.dublin_noise.int_flight_events"
+[0m14:10:50.143988 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.144986 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: BEGIN
+[0m14:10:50.144986 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:10:50.214125 [debug] [Thread-1 (]: SQL status: BEGIN in 0.068 seconds
+[0m14:10:50.215134 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.216133 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+
+  create view "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_tmp"
+    
+    
+  as (
+    with stage_1 as (
+Select *,
+    FIRST_VALUE(on_ground) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_on_ground,
+	LAST_VALUE(on_ground) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_on_ground,
+	FIRST_VALUE(baro_altitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_altitude,
+	LAST_VALUE(baro_altitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_altitude,
+	FIRST_VALUE(latitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_latitude,
+	FIRST_VALUE(longitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_longitude,
+	LAST_VALUE(latitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_latitude,
+	LAST_VALUE(longitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_longitude,
+	LAST_VALUE(true_track) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_heading,
+	FIRST_VALUE(callsign) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_callsign	
+
+from "dublin_noise"."dbt_intermediate"."int_flight_pings_rank" 
+),
+
+stage_2 as (
+
+    select
+        icao24,flight_event_number, 
+        min(last_contact) as event_start,
+        max(last_contact) as event_end,
+        max(baro_altitude) as peak_altitude,
+        count(*) as ping_count,
+        max(first_altitude) as first_altitude,
+        max(last_altitude) as last_altitude,
+
+        max(first_latitude) as first_latitude,
+        max(last_latitude) as last_latitude,
+
+        max(first_longitude) as first_longitude,
+        max(last_longitude) as last_longitude,
+
+        max(last_heading) as last_heading,
+
+        max(first_callsign) as first_callsign,
+        
+        bool_or(first_on_ground) as first_on_ground,
+        bool_or(last_on_ground) as last_on_ground
+        
+    from stage_1
+    group by icao24, flight_event_number)
+
+select *,
+	case 
+		when ping_count < 2 then 'likely_noise'
+		else 'actual_event'
+		end as quality_check_1,
+	case 
+		when first_on_ground is False and last_on_ground is True then 'Arrival'
+		when first_on_ground is True and last_on_ground is False then 'Departure'
+		when first_on_ground is False and last_on_ground is False then 'Overflight'
+		when first_on_ground is True and last_on_ground is True then 'Ground movement'
+		end as Operations
+from stage_2
+  );
+[0m14:10:50.357875 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.141 seconds
+[0m14:10:50.368384 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.369384 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+alter table "dublin_noise"."dbt_intermediate"."int_flight_events" rename to "int_flight_events__dbt_backup"
+[0m14:10:50.373067 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m14:10:50.378075 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.378075 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+alter table "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_tmp" rename to "int_flight_events"
+[0m14:10:50.381070 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:10:50.405719 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: COMMIT
+[0m14:10:50.405719 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.406719 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: COMMIT
+[0m14:10:50.409820 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m14:10:50.418349 [debug] [Thread-1 (]: Applying DROP to: "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_backup"
+[0m14:10:50.425865 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m14:10:50.425865 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+drop view if exists "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_backup" cascade
+[0m14:10:50.436159 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.010 seconds
+[0m14:10:50.440153 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: Close
+[0m14:10:50.444680 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fffe0f4c-1aee-4371-b83e-06dbed6a870b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC18494DA0>]}
+[0m14:10:50.445693 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_intermediate.int_flight_events ............ [[32mCREATE VIEW[0m in 0.37s]
+[0m14:10:50.447683 [debug] [Thread-1 (]: Finished running node model.dublin_noise.int_flight_events
+[0m14:10:50.450680 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:50.451682 [debug] [MainThread]: On master: BEGIN
+[0m14:10:50.452676 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:10:50.520383 [debug] [MainThread]: SQL status: BEGIN in 0.068 seconds
+[0m14:10:50.521386 [debug] [MainThread]: On master: COMMIT
+[0m14:10:50.522394 [debug] [MainThread]: Using postgres connection "master"
+[0m14:10:50.523394 [debug] [MainThread]: On master: COMMIT
+[0m14:10:50.524389 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m14:10:50.525379 [debug] [MainThread]: On master: Close
+[0m14:10:50.526376 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:10:50.527887 [debug] [MainThread]: Connection 'list_dublin_noise' was properly closed.
+[0m14:10:50.528894 [debug] [MainThread]: Connection 'list_dublin_noise_dbt_staging' was properly closed.
+[0m14:10:50.529903 [debug] [MainThread]: Connection 'list_dublin_noise_dbt_intermediate' was properly closed.
+[0m14:10:50.529903 [debug] [MainThread]: Connection 'model.dublin_noise.int_flight_events' was properly closed.
+[0m14:10:50.531898 [info ] [MainThread]: 
+[0m14:10:50.532902 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 5.05 seconds (5.05s).
+[0m14:10:50.533899 [debug] [MainThread]: Command end result
+[0m14:10:50.567470 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\manifest.json
+[0m14:10:50.572003 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\semantic_manifest.json
+[0m14:10:50.582532 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\run_results.json
+[0m14:10:50.583534 [info ] [MainThread]: 
+[0m14:10:50.585050 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:10:50.585364 [info ] [MainThread]: 
+[0m14:10:50.587387 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m14:10:50.588903 [debug] [MainThread]: Command `dbt run` succeeded at 14:10:50.588903 after 9.11 seconds
+[0m14:10:50.589923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC15BBCCE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC17EE3710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AC15F738F0>]}
+[0m14:10:50.591444 [debug] [MainThread]: Flushing usage events
+[0m14:10:51.483214 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:06:03.715921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D580A957F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D584003B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D584001490>]}
+
+
+============================== 15:06:03.734954 | adff582a-86c8-4dbe-beb7-31e101485a6a ==============================
+[0m15:06:03.734954 [info ] [MainThread]: Running with dbt=1.10.20
+[0m15:06:03.737968 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\pranav\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select int_flight_events', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\pranav\\Documents\\Flight Noise Intelligence Platform\\dbt\\logs'}
+[0m15:06:04.330726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D5857ECD40>]}
+[0m15:06:04.505066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D585785D30>]}
+[0m15:06:04.509067 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m15:06:05.284100 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m15:06:05.843404 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:06:05.844997 [debug] [MainThread]: Partial parsing: updated file: dublin_noise://models\intermediate\int_flight_events.sql
+[0m15:06:06.423296 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dublin_noise.marts
+[0m15:06:06.478469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D586024F20>]}
+[0m15:06:06.660978 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\manifest.json
+[0m15:06:06.668245 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\semantic_manifest.json
+[0m15:06:06.786081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D586032840>]}
+[0m15:06:06.787086 [info ] [MainThread]: Found 4 models, 3 data tests, 2 sources, 447 macros
+[0m15:06:06.789073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D585785970>]}
+[0m15:06:06.794611 [info ] [MainThread]: 
+[0m15:06:06.796607 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:06:06.798599 [info ] [MainThread]: 
+[0m15:06:06.799612 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:06:06.804153 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise'
+[0m15:06:07.260464 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise"
+[0m15:06:07.261466 [debug] [ThreadPool]: On list_dublin_noise: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:06:07.263471 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:06:07.411438 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.148 seconds
+[0m15:06:07.415013 [debug] [ThreadPool]: On list_dublin_noise: Close
+[0m15:06:07.426542 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise_dbt_intermediate'
+[0m15:06:07.436042 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dublin_noise_dbt_staging'
+[0m15:06:07.441043 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_intermediate"
+[0m15:06:07.445042 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_staging"
+[0m15:06:07.445552 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: BEGIN
+[0m15:06:07.446563 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: BEGIN
+[0m15:06:07.447563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:06:07.447563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:06:07.545067 [debug] [ThreadPool]: SQL status: BEGIN in 0.098 seconds
+[0m15:06:07.547069 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_intermediate"
+[0m15:06:07.548069 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise_dbt_intermediate"} */
+select
+      'dublin_noise' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_intermediate'
+    union all
+    select
+      'dublin_noise' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_intermediate'
+    union all
+    select
+      'dublin_noise' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dbt_intermediate'
+  
+[0m15:06:07.554625 [debug] [ThreadPool]: SQL status: BEGIN in 0.106 seconds
+[0m15:06:07.555625 [debug] [ThreadPool]: Using postgres connection "list_dublin_noise_dbt_staging"
+[0m15:06:07.556614 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "list_dublin_noise_dbt_staging"} */
+select
+      'dublin_noise' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_staging'
+    union all
+    select
+      'dublin_noise' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_staging'
+    union all
+    select
+      'dublin_noise' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dbt_staging'
+  
+[0m15:06:07.577845 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.029 seconds
+[0m15:06:07.581836 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: ROLLBACK
+[0m15:06:07.582839 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.025 seconds
+[0m15:06:07.586369 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: ROLLBACK
+[0m15:06:07.587363 [debug] [ThreadPool]: On list_dublin_noise_dbt_intermediate: Close
+[0m15:06:07.588367 [debug] [ThreadPool]: On list_dublin_noise_dbt_staging: Close
+[0m15:06:07.603456 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:07.605453 [debug] [MainThread]: On master: BEGIN
+[0m15:06:07.605453 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:06:07.694942 [debug] [MainThread]: SQL status: BEGIN in 0.089 seconds
+[0m15:06:07.695956 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:07.697938 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:06:07.728572 [debug] [MainThread]: SQL status: SELECT 4 in 0.030 seconds
+[0m15:06:07.733143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D585AC18B0>]}
+[0m15:06:07.734138 [debug] [MainThread]: On master: ROLLBACK
+[0m15:06:07.735155 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:07.737137 [debug] [MainThread]: On master: BEGIN
+[0m15:06:07.739142 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:06:07.741139 [debug] [MainThread]: On master: COMMIT
+[0m15:06:07.743679 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:07.744208 [debug] [MainThread]: On master: COMMIT
+[0m15:06:07.745224 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:06:07.746253 [debug] [MainThread]: On master: Close
+[0m15:06:07.762367 [debug] [Thread-1 (]: Began running node model.dublin_noise.int_flight_events
+[0m15:06:07.762367 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_intermediate.int_flight_events ................. [RUN]
+[0m15:06:07.764910 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dublin_noise.int_flight_events'
+[0m15:06:07.765911 [debug] [Thread-1 (]: Began compiling node model.dublin_noise.int_flight_events
+[0m15:06:07.781468 [debug] [Thread-1 (]: Writing injected SQL for node "model.dublin_noise.int_flight_events"
+[0m15:06:07.785995 [debug] [Thread-1 (]: Began executing node model.dublin_noise.int_flight_events
+[0m15:06:07.878822 [debug] [Thread-1 (]: Writing runtime sql for node "model.dublin_noise.int_flight_events"
+[0m15:06:07.883295 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:07.885296 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: BEGIN
+[0m15:06:07.885296 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:06:07.977256 [debug] [Thread-1 (]: SQL status: BEGIN in 0.091 seconds
+[0m15:06:07.978262 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:07.980253 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+
+  create view "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_tmp"
+    
+    
+  as (
+    with stage_1 as (
+Select *,
+    FIRST_VALUE(on_ground) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_on_ground,
+	LAST_VALUE(on_ground) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_on_ground,
+	FIRST_VALUE(baro_altitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_altitude,
+	LAST_VALUE(baro_altitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_altitude,
+	FIRST_VALUE(latitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_latitude,
+	FIRST_VALUE(longitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_longitude,
+	LAST_VALUE(latitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_latitude,
+	LAST_VALUE(longitude) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_longitude,
+	LAST_VALUE(true_track) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) as last_heading,
+	FIRST_VALUE(callsign) OVER(PARTITION BY icao24, flight_event_number ORDER BY last_contact) as first_callsign	
+
+from "dublin_noise"."dbt_intermediate"."int_flight_pings_rank" 
+),
+
+stage_2 as (
+
+    select
+        icao24,flight_event_number, 
+        min(last_contact) as event_start,
+        max(last_contact) as event_end,
+        max(baro_altitude) as peak_altitude,
+        count(*) as ping_count,
+        max(first_altitude) as first_altitude,
+        max(last_altitude) as last_altitude,
+
+        max(first_latitude) as first_latitude,
+        max(last_latitude) as last_latitude,
+
+        max(first_longitude) as first_longitude,
+        max(last_longitude) as last_longitude,
+
+        max(last_heading) as last_heading,
+
+        max(first_callsign) as first_callsign,
+        
+        bool_or(first_on_ground) as first_on_ground,
+        bool_or(last_on_ground) as last_on_ground
+        
+    from stage_1
+    group by icao24, flight_event_number),
+    
+stage_3 as (
+    select *,
+        case 
+            when ping_count < 2 then 'likely_noise'
+            else 'actual_event'
+            end as quality_check_1,
+        case 
+            when first_on_ground is False and last_on_ground is True then 'Arrival'
+            when first_on_ground is True and last_on_ground is False then 'Departure'
+            when first_on_ground is False and last_on_ground is False then 'Overflight'
+            when first_on_ground is True and last_on_ground is True then 'Ground movement'
+            else null
+            end as operations
+    from stage_2
+    )
+select stage_3.*, air.registration, air.manufacturer_icao, air.manufacturer_name, air.model, air.typecode, air.icao_aircraft_type, air.operator, air.category_description
+
+from stage_3 LEFT JOIN "dublin_noise"."dbt_staging"."stg_aircrafts" AS air
+ON stage_3.icao24 = air.icao24
+  );
+[0m15:06:08.096708 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.113 seconds
+[0m15:06:08.124524 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:08.125526 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+alter table "dublin_noise"."dbt_intermediate"."int_flight_events" rename to "int_flight_events__dbt_backup"
+[0m15:06:08.134849 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.007 seconds
+[0m15:06:08.147665 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:08.149380 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+alter table "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_tmp" rename to "int_flight_events"
+[0m15:06:08.153400 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:06:08.196614 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: COMMIT
+[0m15:06:08.197707 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:08.198834 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: COMMIT
+[0m15:06:08.203198 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:06:08.218691 [debug] [Thread-1 (]: Applying DROP to: "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_backup"
+[0m15:06:08.233894 [debug] [Thread-1 (]: Using postgres connection "model.dublin_noise.int_flight_events"
+[0m15:06:08.235894 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "dublin_noise", "target_name": "dev", "node_id": "model.dublin_noise.int_flight_events"} */
+drop view if exists "dublin_noise"."dbt_intermediate"."int_flight_events__dbt_backup" cascade
+[0m15:06:08.244576 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.008 seconds
+[0m15:06:08.251174 [debug] [Thread-1 (]: On model.dublin_noise.int_flight_events: Close
+[0m15:06:08.258155 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'adff582a-86c8-4dbe-beb7-31e101485a6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D58152E390>]}
+[0m15:06:08.260182 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_intermediate.int_flight_events ............ [[32mCREATE VIEW[0m in 0.49s]
+[0m15:06:08.262731 [debug] [Thread-1 (]: Finished running node model.dublin_noise.int_flight_events
+[0m15:06:08.266720 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:08.267715 [debug] [MainThread]: On master: BEGIN
+[0m15:06:08.268716 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:06:08.367303 [debug] [MainThread]: SQL status: BEGIN in 0.098 seconds
+[0m15:06:08.368321 [debug] [MainThread]: On master: COMMIT
+[0m15:06:08.369317 [debug] [MainThread]: Using postgres connection "master"
+[0m15:06:08.369317 [debug] [MainThread]: On master: COMMIT
+[0m15:06:08.370319 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:06:08.372316 [debug] [MainThread]: On master: Close
+[0m15:06:08.373311 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:06:08.373311 [debug] [MainThread]: Connection 'list_dublin_noise' was properly closed.
+[0m15:06:08.374310 [debug] [MainThread]: Connection 'list_dublin_noise_dbt_intermediate' was properly closed.
+[0m15:06:08.375307 [debug] [MainThread]: Connection 'list_dublin_noise_dbt_staging' was properly closed.
+[0m15:06:08.375307 [debug] [MainThread]: Connection 'model.dublin_noise.int_flight_events' was properly closed.
+[0m15:06:08.377250 [info ] [MainThread]: 
+[0m15:06:08.378862 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.58 seconds (1.58s).
+[0m15:06:08.380858 [debug] [MainThread]: Command end result
+[0m15:06:08.427544 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\manifest.json
+[0m15:06:08.434094 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\semantic_manifest.json
+[0m15:06:08.448626 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\pranav\Documents\Flight Noise Intelligence Platform\dbt\target\run_results.json
+[0m15:06:08.449632 [info ] [MainThread]: 
+[0m15:06:08.451161 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:06:08.453175 [info ] [MainThread]: 
+[0m15:06:08.454175 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m15:06:08.457182 [debug] [MainThread]: Command `dbt run` succeeded at 15:06:08.456174 after 5.10 seconds
+[0m15:06:08.459170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D585AF4FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D5864B46B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D5860ADCD0>]}
+[0m15:06:08.460173 [debug] [MainThread]: Flushing usage events
+[0m15:06:13.641430 [debug] [MainThread]: An error was encountered while trying to flush usage events
