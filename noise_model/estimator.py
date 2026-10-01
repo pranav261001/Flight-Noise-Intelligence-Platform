@@ -117,11 +117,11 @@ def to_irish_tz(dt):
     return dt.astimezone(IRISH_TZ)
 
 
-dt_time = dt.datetime(2026, 7, 1, 18, 0, 0)
+dt_time = dt.datetime(2026, 7, 1, 22, 00, 0)
 # print(dt.tzinfo)
 
 dt_1 = to_irish_tz(dt_time)
-print(dt_1.time())
+# print(dt_1.hour)
 
 def time_bucket(timestamp):
     time = to_irish_tz(timestamp)
@@ -153,7 +153,7 @@ def lden(ld, le, ln):
     lden_value = 10 * math.log10(day + eve + night)
     return lden_value
 
-print(period_leq([], 43200))
-print(period_leq([100,300], 43200))
-print(lden(60,60,60))
-print(lden(period_leq([], 14400), period_leq([], 14400), period_leq([], 14400)))
+# print(period_leq([], 43200))
+# print(period_leq([100,300], 43200))
+# print(lden(60,60,60))
+# print(lden(period_leq([], 14400), period_leq([], 14400), period_leq([], 14400)))
