@@ -4,3 +4,8 @@ sources:
     tables:
       - name: flight_state_vectors
       - name: aircraft_reference
+  - name: compute
+    schema: compute
+    tables:
+      - name: noise_segments
+      - name: daily_lden 

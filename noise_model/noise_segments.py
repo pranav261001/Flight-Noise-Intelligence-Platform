@@ -4,7 +4,8 @@ import pandas as pd
 from sqlalchemy import create_engine, text #( required for database connection, create engine, and execute queries)
 from dotenv import load_dotenv
 import urllib
-from estimator import classify_aircrafts, haversine_formula, period_leq, lden, time_bucket, sel_estimate, slant_distance 
+from estimator import classify_aircrafts, AIRPORT_ELEVATION_M, haversine_formula, period_leq, lden, time_bucket, sel_estimate, slant_distance, to_irish_tz
+import datetime as dt
 
 load_dotenv()
 
@@ -42,21 +43,26 @@ def compute_noise_segments(df):
     Compute = [ ]
     for index, row in df.iterrows():
         icao = row['icao24']
+        start_date = to_irish_tz(row['event_start']).date()
         flight_event = row['flight_event_number']
         category = classify_aircrafts(row['typecode'], row['icao_aircraft_type'], row['category_description'])
-        d1 = slant_distance(row['first_latitude'], row['first_longitude'],row['first_altitude'])
-        d2 = slant_distance(row['last_latitude'], row['last_longitude'],row['last_altitude'])
+        # OpenSky sends no altitude for aircraft on the ground, so treat missing altitude as airport elevation
+        first_alt = AIRPORT_ELEVATION_M if pd.isna(row['first_altitude']) else row['first_altitude']
+        last_alt = AIRPORT_ELEVATION_M if pd.isna(row['last_altitude']) else row['last_altitude']
+        d1 = slant_distance(row['first_latitude'], row['first_longitude'], first_alt)
+        d2 = slant_distance(row['last_latitude'], row['last_longitude'], last_alt)
         distance = min(d1,d2)
         sel = sel_estimate(category, distance)
         time = time_bucket(row['event_start'])       
     
         Compute.append({
             'icao24': icao,
-            'Flight_Event': flight_event,
-            'Aircraft_Category': category,
-            'Distance_m': distance,
-            'SEL':sel,
-            'Time_Category': time
+            'start_date': start_date,
+            'flight_event': flight_event,
+            'aircraft_category': category,
+            'distance_m': distance,
+            'sel':sel,
+            'time_category': time
         })
     return Compute
 
@@ -72,18 +78,18 @@ def create_compute_schema(engine):
         connection.execute(text("""
     CREATE TABLE IF NOT EXISTS compute.noise_segments (
         "icao24" VARCHAR(255),
-        "Flight_Event" BIGINT,
-        "Aircraft_Category" VARCHAR(255),
-        "Distance_m" FLOAT,
-        "SEL" FLOAT,
-        "Time_Category" VARCHAR(255)
+        "flight_event" BIGINT,
+        "aircraft_category" VARCHAR(255),
+        "distance_m" FLOAT,
+        "sel" FLOAT,
+        "time_category" VARCHAR(255)
         ); """))
 def save_to_db(df, engine):
     df.to_sql(
         name="noise_segments",
         schema = "compute",
         con=engine,
-        if_exists = 'append',
+        if_exists = 'replace',
         index=False
     )
 

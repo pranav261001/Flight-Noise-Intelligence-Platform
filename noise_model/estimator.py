@@ -120,8 +120,8 @@ def to_irish_tz(dt):
 dt_time = dt.datetime(2026, 7, 1, 22, 00, 0)
 # print(dt.tzinfo)
 
-dt_1 = to_irish_tz(dt_time)
-# print(dt_1.hour)
+dt_1 = (to_irish_tz(dt_time)).date()
+# print(dt_1)
 
 def time_bucket(timestamp):
     time = to_irish_tz(timestamp)
